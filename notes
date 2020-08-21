@@ -1,0 +1,135 @@
+window.onload = function () {
+    // ASSIGN TEXT TO AN ARRAY VARIABLE
+    const taskList = [];
+
+    // LOOP THROUGH AND PRINT ALL ITEMS WITHIN THE ARRAY
+    for( let [index, item] of taskList.entries()) {
+        console.log(`${index} - ${item}`);
+    } 
+    if (taskList.length === 0) { 
+        return `<li>There are no items on your list.</li>`
+        //return console.log('There are no items on your list.');      
+    }
+
+    // CAPTURE INPUT TEXT ON BUTTON CLICK
+    const button = document.getElementById('submitButton'); 
+    button.addEventListener('click', e => {
+
+        //console.dir(e.target); // returns a list of properties available on the button element when clicked
+        //console.log('btn text', e.target.innerHTML); // returns Add
+    })
+
+    // ADD ITEM TO THE ARRAY
+    taskList.push('something');
+
+
+    const userInput = document.getElementById('inputText');
+    userInput.addEventListener('keyup', e => { 
+        console.dir(e.target);
+        console.log('text?', e.key);
+    })
+    //var x = document.getElementById('inputText').value;
+    //console.log('input value: ', x);
+
+     
+    // function getInputText(x) { 
+
+    //     // inputToAdd = document.getElementById('listItem').innerHTML;
+    //     // console.log(inputToAdd);
+
+    //     //document.getElementById('submitButton').addEventListener('click', getInputText());
+    // }
+}
+   
+  
+    // __________________________________________________________________
+    // THROTTLING...a technique in which, no matter how many times the user fires the event, the attached function will be executed only once in a given time interval. For instance, when a user clicks on a button, a helloWorld function is executed which prints Hello, world on the console.
+
+    // const throttle = (fn, delay) => { 
+    //     let last = 0;
+    //     return (...args) => { 
+    //         const now = new Date().getTime();
+    //         console.log('now', now);
+    //         console.log('last', last);
+
+    //         if (now - last < delay) {
+    //             return;
+    //         }
+    //         last = now;
+    //         return fn(...args);
+    //     }
+    // }
+
+    // document.getElementById('one').addEventListener('click', throttle((e) => {
+    //     console.log('you clicked?');
+    // }, 5000)); // returns 'you clicked?' once every 5 seconds no matter how many times the button is clicked.
+
+    // DEBOUNCE...The debounce() function forces a function to wait a certain amount of time before running again. The function is built to limit the number of times a function is called. The Send Request() function is debounced. Requests are sent only after fixed time intervals regardless of how many times the user presses the button.
+//     const debounce = (fn, delay) => {
+//         let timeoutId;
+//         return function (...args) {
+//             if (timeoutId) {
+//                 clearTimeout(timeoutId);
+//             }
+//             timeoutId = setTimeout(() => {
+//                 fn(...args)
+//             }, delay);
+//         };
+
+//     document.getElementById('main').addEventListener('click', debounce(e => {
+//         console.log('clicked');
+//     }, 2000))
+// }
+        // document.getElementById('one').addEventListener('click', () => {
+        //     console.log('clicked'); // prints 'clicked' each time the button is clicked 
+        // });
+        
+            
+    // EVENT BUBBLING...Event bubbling is a type of event propagation where the event first triggers on the innermost target element, and then successively triggers on the ancestors of the target element in the same nesting hierarchy till it reaches the outermost DOM element or document object.
+    // const main = document.getElementById('main');
+    // const one = document.getElementById('one');
+    // const two = document.getElementById('two');
+    // const body = document.querySelector('body');
+
+    // main.addEventListener('click', e => {
+    //     console.log('main clicked');
+    // });
+    // one.addEventListener('click', e => {
+    //     console.log('one clicked');
+    // });
+    // two.addEventListener('click', e => {
+    //     console.log('two clicked');
+    // });
+    // body.addEventListener('click', e => {
+    //     console.log('body clicked');
+    // });
+
+    // DOM EVENTS
+    // const elementmain = document.getElementById('main');
+    // elementmain.style.color = 'blue';
+
+    // const buttons = document.querySelectorAll('button');
+
+    // // SETTING AN EVENT TO HANDLE A CLICK
+    // const handleClick = e => {
+    //     console.log(e.target.innerHTML); // returns the HTML text of the button each time it is clicked  
+    // }
+
+    // buttons.forEach(eachButton => { 
+    //     eachButton.addEventListener('click', handleClick);
+    // })
+
+    // REMOVING A CLICK EVENT
+    // setTimeout(() => {
+    //     buttons.forEach(eachButton => { 
+    //         eachButton.removeEventListener('click', handleClick);
+    //     })
+    // }, 10000); // removes the event listener after 10 seconds 
+    
+    // SELECTING AN ELEMENT & RETRIEVING AVAILABLE PROPERTIES
+    // const button = document.querySelector('button'); // selects a button
+    // button.addEventListener('click', e => { 
+    //     console.dir(e.target); // returns a list of properties available on the button element when clicked
+    //     console.log(e.target.innerHTML); // returns Click here
+    // })
+//}
